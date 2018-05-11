@@ -2,10 +2,6 @@ class PigLatinizer
 
   attr_reader :text
 
-  def vowel?(letter)
-    letter.match(/[aeiouAEIOU]/)
-  end
-
   def piglatinize(text)
     if text.include?(" ")
       piglatin_sentence(text)
@@ -24,8 +20,12 @@ class PigLatinizer
     end
   end
 
-    def piglatin_sentence(text)
-      text.split.map {|word| piglatinize(word)}.join(" ")
-    end
+  def piglatin_sentence(text)
+    text.split.map {|word| piglatinize(word)}.join(" ")
+  end
+
+  def vowel?(letter)
+    letter.match(/[aeiouAEIOU]/)
+  end
 
 end
